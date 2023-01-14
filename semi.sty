@@ -1,0 +1,52 @@
+%\ProvidesPackage{semi}[2018/7/3 v1.0]
+
+\usepackage[deluxe]{luatexja-preset}
+\usepackage{luatexja-ruby}
+\usepackage{tabularx} %2段組などで使う・・・はず
+\usepackage{amsmath} %数式を，業界標準にする
+\usepackage{moreverb} %ソースコードを引用する際に使う
+\usepackage[margin=2cm]{geometry} %上下左右の余白設定
+\usepackage{dcolumn}
+\usepackage{color} %文字の色を変更する場合に使う
+\usepackage{eclbkbox} %複数ページにまたがる箱を使う
+\usepackage{itembkbx} %複数ページにまたがるソースコードを引用する際に使う
+\usepackage{enumerate} %箇条書きを装飾する際に使う
+\usepackage{unicode-math}
+%% ブックマーク
+\usepackage[unicode,hidelinks,pdfusetitle]{hyperref}
+
+%% 画像
+\usepackage{graphicx}
+\renewcommand{\headfont}{\bfseries} %見出しの英数字をゴシックにしない
+
+\graphicspath{{./figures}}
+
+% compact: 
+% topmarks: 
+% calcwidth: 
+% pagestyles: 
+%\titlelabel{\thetitle\enspace}
+%\usepackage{url}
+%\usepackage{here}
+%\usepackage{comment}
+%\usepackage{diagbox}
+
+
+
+\def\日付#1{\def\date{#1}}
+\def\氏名#1{\def\name{#1}}
+\def\タイトル#1{\def\title{#1}}
+
+\setlength{\unitlength}{1mm}
+
+\newcommand{\semi}{
+\begin{flushright}
+\date\\
+\name
+\end{flushright}
+
+\begin{center}%センタリング
+\Large{\bf{\title}}
+\end{center}
+
+}

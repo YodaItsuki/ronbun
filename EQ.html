@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イコライザー</title>
+  <script src="EQ.js" defer></script>
+  <link rel="stylesheet" href="EQ.css">
+</head>
+<body>
+  <div class="seigyo">
+    <audio src="../demo/Vocal.mp3" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark">●</span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="seigyo">
+    <audio src="../demo/Drums.mp3" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark"></span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="seigyo">
+    <audio src="../demo/Piano.mp3" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark"></span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="seigyo">
+    <audio src="../demo/Guitar.mp3" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark"></span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="seigyo">
+    <audio src="../demo/Bass.mp3" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark"></span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="seigyo">
+    <audio src="" id="audio" preload="metadata"></audio>
+    <input type="file" id="filesousin" accept=".mp3, .ogg">
+    <input type="button" id="mute" value="Mute">
+    <input type="button" id="solo" value="Solo">
+    <input type="button" id="effect_switch" value="Bypass">
+    <input type="button" id="reset" value="リセット">
+    <input type="button" id="kirikae" value="切り替え">
+    <span id="select_mark"></span>
+    <span id="audio_name"></span>
+  </div>
+  <div class="saisei">
+    <input type="button" id="douji" value="再生" disabled>
+    <input type="range" id="saiseiichi" min="0" max="0" step="1" value="0" disabled>
+    <span id="saiseijikan">0:00</span>
+  </div>
+  <div class="effect_object">
+    <div class="effects_view">
+      <div class="sentaku_audio_div">
+      <label id="sentaku_audio"></label>
+      <br>
+      </div>
+      <div class="effects_slider">
+        <div class="volume_pan"><label id="effects">ボリューム</label><input type="range" id="volume" min="0" max="2" step="0.01" value="1"><div class="number_view"><span id="volumedb">100</span>%</div></div>
+        <div class="volume_pan"><label id="effects">パン</label><input type="range" id="pan" min="-1" max="1" step="0.01" value="0"><div class="number_view"><span id="direction">C</span></div></div>
+        <br>
+        <div class="EQ_group">
+          <div class="EQ"><label id="effects">31.25Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">62.5Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">125Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">250Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">500Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">1000Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">2000Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">4000Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">8000Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+          <div class="EQ"><label id="effects">16000Hz</label><input type="range" id="eq" min="-40" max="40" step="1" value="0"><div class="number_view"><span id="eqdb">0</span>db</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="canvas">
+      <canvas id="analizer_canvas" width="580" height="300"></canvas>
+      <canvas id="analizer_canvas_text" width="680" height="400"></canvas>
+    </div>
+  </div>
+  <a href="../index.html">トップページに戻る</a>
+</body>
+</html>
